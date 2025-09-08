@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Table Example</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;   /* acts like cellpadding */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Student Marks Table</h2>
+
+  <table>
+    <tr>
+      <th rowspan="2">Roll No</th>
+      <th rowspan="2">Name</th>
+      <th colspan="3">Marks</th>
+      <th rowspan="2">Total</th>
+    </tr>
+    <tr>
+      <th>Math</th>
+      <th>Science</th>
+      <th>English</th>
+    </tr>
+
+    <tr>
+      <td>101</td>
+      <td>Amit</td>
+      <td>78</td>
+      <td>85</td>
+      <td>90</td>
+      <td>253</td>
+    </tr>
+
+    <tr>
+      <td>102</td>
+      <td>Neha</td>
+      <td>88</td>
+      <td>92</td>
+      <td>81</td>
+      <td>261</td>
+    </tr>
+
+    <tr>
+      <td>103</td>
+      <td>Ravi</td>
+      <td>68</td>
+      <td>75</td>
+      <td>80</td>
+      <td>223</td>
+    </tr>
+
+    <tr>
+      <td colspan="5" align="right"><b>Average Marks</b></td>
+      <td><b>245.6</b></td>
+    </tr>
+  </table>
+
+</body>
+</html>
