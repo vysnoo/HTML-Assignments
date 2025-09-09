@@ -30,9 +30,6 @@
           <label
             ><input type="radio" name="gender" value="female" /> Female</label
           >
-          <label
-            ><input type="radio" name="gender" value="other" /> Other</label
-          >
         </div>
         <div class="form-buttons">
           <button type="submit" class="submit-btn">Register</button>
@@ -43,6 +40,13 @@
     <script src="js/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
     <script>
       $(document).ready(function () {
+        $.validator.addMethod(
+          "lettersAndSpacesOnly",
+          function (value, element) {
+            return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
+          },
+          "Please enter letters and spaces only"
+        );
         $.validator.setDefaults({
           submitHandler: function () {
             alert("submitted!");
@@ -53,6 +57,7 @@
             name: {
               required: true,
               minlength: 2,
+              lettersAndSpacesOnly: true,
             },
             email: {
               required: true,
@@ -74,6 +79,8 @@
             name: {
               required: "Please enter your name",
               minlength: "length will be more than 2",
+              lettersAndSpacesOnly:
+                "Name should contain only letters and spaces",
             },
             email: {
               required: "Please enter your email id",
